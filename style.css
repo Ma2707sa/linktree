@@ -1,11 +1,11 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    outline: 0;
-    transition: all 0.5s ease;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+  transition: all 0.5s ease;
 }
-body{
+body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,10 @@ body{
   height: 100vh;
   font-family: 'Poppins', sans-serif;
   width: 100%;
+  font-size: 16px;
+  flex-direction: column; 
 }
+
 .socail-media {
   display: flex;
   align-items: center;
@@ -24,6 +27,10 @@ body{
   list-style: none;
   padding: 0;
   margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .socail-media li a {
@@ -39,7 +46,17 @@ body{
   z-index: 9;
   border: 1px solid #5b9d15;
   border-radius: 15px;
-
+  transition: all 0.5s ease;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .socail-media li a svg {
@@ -78,43 +95,61 @@ body{
 
 @keyframes sideClip {
   0% {
-    clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
   }
 
   50% {
-    clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
   }
 
   100% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
 @keyframes fadeInLeft {
   from {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
   }
 
   to {
-    opacity: 1;
-    transform: none;
+      opacity: 1;
+      transform: none;
   }
 }
+
 .container {
   width: 430px;
   padding: 20px;
   border-radius: 15px;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   display: flex;
   height: 510px;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  border: 2px solid #ccc;
 }
-h1 {
+
+
+.h1 {
   color: #fff;
   font-size: 30px;
   margin-bottom: 20px;
@@ -122,40 +157,82 @@ h1 {
   display: flex;
   height: 50%;
   text-transform: capitalize;
-}
-.logo{
-  position: absolute;
-  top: -40px;
-  left: 50%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+  width: 100vh;
   transform: translateX(-50%);
-  width: 150px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+}
+header {
+  width: 100vw;
   height: 100px;
-  border-radius: 50%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  object-fit: cover;
-  border: 5px solid #fff;
-  top: -20%;
+  padding: 0 20px;
   position: absolute;
+  top: 22%;
+  z-index: 1000;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 0);
+  color: #fff;
+  text-transform: capitalize;
+  transform: translateX(-50%);
+  left: 50%;
+  font-size:15px;
 }
-.logo img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: flex;
-  justify-content: center;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
+/* تحسين التصميم على الشاشات الصغيرة */
+@media only screen and (max-width: 768px) {
+  body {
+      font-size: 14px;
+      padding: 10px;
+  }
+  .socail-media {
+      gap: 15px;
+      flex-wrap: wrap;
+  }
+  
 }
 
-.footer p {
-  margin: 0;
+.profile-photo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 10%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px; 
+  top: -40%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #ccc; 
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;  
+  border-radius: 50%;  
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
 }
